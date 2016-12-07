@@ -9,5 +9,4 @@ Dark Firefox UI theme for retina macs.
 
 ## Known problems:
 * TabBar background-color when fullscreen isn't dark
-* Close-minimize-fullscreen buttons aren't vertically centered
 * foreward button turns to white before disappearing

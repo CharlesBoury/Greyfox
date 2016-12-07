@@ -11,6 +11,8 @@
     --url-bg:           #2d2d2d;
     --back-button-bg:   #3f3e3e;
     --url-text:         #555555;
+
+    --traffic-light-offset: 4px;
 }
 
 
@@ -26,6 +28,16 @@
  
         #titlebar {
             margin-bottom: -40px !important;
+        }
+
+        /* ---------------------- */
+        /* center traffic-light-buttons vertically */
+
+        #titlebar {
+              margin-top: calc(var(--traffic-light-offset) * -1) !important;
+        }
+        #TabsToolbar {
+              padding-top: var(--traffic-light-offset);
         }
 
         /* ---------------------- */
