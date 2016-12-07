@@ -1,29 +1,31 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 :root {
-  --tab-bg:           #1e1e1e;
-  --tab-text:         #747369;
-  --tab-hover-bg:     #1e1e1e;
-  --tab-hover-text:   #d3d0c8;
-  --current-tab-bg:   #2d2d2d;
-  --current-tab-text: #e8e6df;
+    --tab-bg:           #1e1e1e;
+    --tab-text:         #747369;
+    --tab-hover-bg:     #1e1e1e;
+    --tab-hover-text:   #d3d0c8;
+    --current-tab-bg:   #2d2d2d;
+    --current-tab-text: #e8e6df;
 
-  --url-bg:           #2d2d2d;
-  --back-button-bg:   #3f3e3e;
-  --url-text:         #555555;
+    --url-bg:           #2d2d2d;
+    --back-button-bg:   #3f3e3e;
+    --url-text:         #555555;
 }
 
 
 /* no title bar */
 #titlebar {
-  margin-bottom: -40px !important;
+    margin-bottom: -40px !important;
 }
 
-#fullscr-toggler { display:none!important; }
+#fullscr-toggler {
+    display: none !important;
+}
 
 /* fix white bg when opening new tabs */
 browser, browser.display.background_color, tabbrowser tabpanels { 
-    background-color: var(--url-bg) !important; 
+        background-color: var(--url-bg) !important; 
 }
 
 /* ------------------------------------------
@@ -31,24 +33,24 @@ browser, browser.display.background_color, tabbrowser tabpanels {
  */
 
 #TabsToolbar {
-  background: var(--tab-bg);
-  margin-left: -14px;
+    background: var(--tab-bg);
+    margin-left: -14px;
 }
 
 
 #TabsToolbar .tabbrowser-tab {
-  color: var(--tab-text);
-  text-shadow: none;
+    color: var(--tab-text);
+    text-shadow: none;
 }
 
 #TabsToolbar .tabbrowser-tab[selected="true"] {
-  color: var(--current-tab-text);
+    color: var(--current-tab-text);
 }
 
 /* hover effect on tab */
 #TabsToolbar .tabbrowser-tab:not([selected="true"]):hover {
-  color: var(--tab-hover-text);
-  background: var(--tab-hover-bg);
+    color: var(--tab-hover-text);
+    background: var(--tab-hover-bg);
 }
 
 /* Hide close button when not hover. */
@@ -56,39 +58,39 @@ tab .tab-close-button {
 /*    visibility: hidden; */
 }
 tab:hover .tab-close-button {
-   visibility: inherit;
+     visibility: inherit;
 }
 tab[selected=true] {
-  background: var(--current-tab-bg);
+    background: var(--current-tab-bg);
 }
 
 /* Hide rounded corner of tabs */
 .tab-background{
-  opacity: 0;
+    opacity: 0;
 }
 .tabs-newtab-button:hover {
-  background-image: none;
+    background-image: none;
 }
 
 /* make tab favicons grey and flat */
 .tab-icon-image {
-  filter: sepia(100%) opacity(50%) !important;
+    filter: sepia(100%) opacity(50%) !important;
 }
 
 /* removes seperators between tabs */
 #TabsToolbar .tabbrowser-tab:after,
 #TabsToolbar .tabbrowser-tab:before {
-    display: none !important;
+        display: none !important;
 }
 
 
 /* close button */
 .close-icon {
-  list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/close%402x.png") !important;
+    list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/close%402x.png") !important;
 }
 /* new tab button */
 .tabs-newtab-button, #TabsToolbar > #new-tab-button, #TabsToolbar > toolbarpaletteitem > #new-tab-button {
-  list-style: url("https://dl.dropboxusercontent.com/u/6253419/newtab%402x.png") !important;
+    list-style: url("https://dl.dropboxusercontent.com/u/6253419/newtab%402x.png") !important;
 }
 
 /* ------------------------------------------
@@ -97,53 +99,53 @@ tab[selected=true] {
 
 
 #nav-bar {
-  background: var(--url-bg) !important;
-  border: none !important;
-  margin-top: 0 !important;
-  box-shadow: none;
+    background: var(--url-bg) !important;
+    border: none !important;
+    margin-top: 0 !important;
+    box-shadow: none;
 }
 
 #nav-bar-customization-target {
-  padding: 0px;
+    padding: 0px;
 }
 
 /* clear bottom border of nav-bar */
 #navigator-toolbox::after {
-  background: none;
+    background: none;
 }
 
 #urlbar {
-  background: var(--url-bg);
-  color: var(--url-text);
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 0;
-  box-shadow: none;
+    background: var(--url-bg);
+    color: var(--url-text);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 
 /* hide reload button and reader button */
 #urlbar-reload-button, #reader-mode-button {
-  display: none;
+    display: none;
 }
 
 /* back and forward buttons */
 #back-button, #forward-button {
-  height: 22px !important;
-  width: 22px !important;
-  box-shadow: none !important;
-  border: none;
+    height: 22px !important;
+    width: 22px !important;
+    box-shadow: none !important;
+    border: none;
 }
 #back-button:not([disabled=true]), #forward-button:not([disabled=true]) {
-  background: var(--current-tab-bg) !important;
-  border: 1px solid rgba(0,0,0,0.2);
+    background: var(--current-tab-bg) !important;
+    border: 1px solid rgba(0,0,0,0.2);
 }
 
 :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu, #restore-button), #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-    list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/Toolbar%402x.png");
+        list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/Toolbar%402x.png");
 }
 #back-button[disabled=true], #back-button[disabled=true]:hover {
-  border: 1px solid rgba(0,0,0,0.2);
-  background: var(--url-bg) !important;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: var(--url-bg) !important;
 }
 
 
