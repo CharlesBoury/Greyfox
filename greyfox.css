@@ -14,141 +14,154 @@
 }
 
 
-/* no title bar */
-#titlebar {
-    margin-bottom: -40px !important;
-}
 
-#fullscr-toggler {
-    display: none !important;
-}
+@-moz-document
+    url(chrome://browser/content/browser.xul) {
 
-/* fix white bg when opening new tabs */
-browser, browser.display.background_color, tabbrowser tabpanels { 
-        background-color: var(--url-bg) !important; 
-}
+    /* ----------------------------------------------------------
+     *  Tabs
+     */
+        /* ---------------------- */
+        /* remove margin between tabs and top of window */
+ 
+        #titlebar {
+            margin-bottom: -40px !important;
+        }
 
-/* ------------------------------------------
- * Tabs
- */
+        /* ---------------------- */
+        /* tabs closer to window-btns */
 
-#TabsToolbar {
-    background: var(--tab-bg);
-    margin-left: -14px;
-}
+        #TabsToolbar {
+            margin-left: -16px;
+        }
 
+        /* ---------------------- */
+        /* tabs background-color  */
 
-#TabsToolbar .tabbrowser-tab {
-    color: var(--tab-text);
-    text-shadow: none;
-}
+        #TabsToolbar {
+            background: var(--tab-bg);
+        }
+        tab[selected=true] {
+            background: var(--current-tab-bg);
+        }
 
-#TabsToolbar .tabbrowser-tab[selected="true"] {
-    color: var(--current-tab-text);
-}
+        /* ---------------------- */
+        /* tabs text              */
 
-/* hover effect on tab */
-#TabsToolbar .tabbrowser-tab:not([selected="true"]):hover {
-    color: var(--tab-hover-text);
-    background: var(--tab-hover-bg);
-}
+        #TabsToolbar .tabbrowser-tab {
+            color: var(--tab-text);
+            text-shadow: none;
+        }
+        #TabsToolbar .tabbrowser-tab[selected="true"] {
+            color: var(--current-tab-text);
+        }
 
-/* Hide close button when not hover. */
-tab .tab-close-button {
-/*    visibility: hidden; */
-}
-tab:hover .tab-close-button {
-     visibility: inherit;
-}
-tab[selected=true] {
-    background: var(--current-tab-bg);
-}
+        /* ---------------------- */
+        /* tabs hover effect      */
 
-/* Hide rounded corner of tabs */
-.tab-background{
-    opacity: 0;
-}
-.tabs-newtab-button:hover {
-    background-image: none;
-}
+        #TabsToolbar .tabbrowser-tab:not([selected="true"]):hover {
+            color: var(--tab-hover-text);
+        }
 
-/* make tab favicons grey and flat */
-.tab-icon-image {
-    filter: sepia(100%) opacity(50%) !important;
-}
+        /* ---------------------- */
+        /* remove rounded-corner of tabs */
 
-/* removes seperators between tabs */
-#TabsToolbar .tabbrowser-tab:after,
-#TabsToolbar .tabbrowser-tab:before {
-        display: none !important;
-}
+        .tab-background{
+            /* for current tab */
+            opacity: 0;
+        }
+        .tabs-newtab-button:hover {
+            /* for new-tab button */
+            background-image: none;
+        }
 
+        /* ---------------------- */
+        /* remove tabs separators */
 
-/* close button */
-.close-icon {
-    list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/close%402x.png") !important;
-}
-/* new tab button */
-.tabs-newtab-button, #TabsToolbar > #new-tab-button, #TabsToolbar > toolbarpaletteitem > #new-tab-button {
-    list-style: url("https://dl.dropboxusercontent.com/u/6253419/newtab%402x.png") !important;
-}
+        #TabsToolbar .tabbrowser-tab:after,
+        #TabsToolbar .tabbrowser-tab:before {
+            display: none !important;
+        }
 
-/* ------------------------------------------
- * Url
- */
+        /* ---------------------- */
+        /* make unselected tabs favicons grey and flat */
 
+        .tabbrowser-tab:not([selected="true"]) .tab-icon-image {
+            filter: sepia(100%) opacity(50%) !important;
+        }
 
-#nav-bar {
-    background: var(--url-bg) !important;
-    border: none !important;
-    margin-top: 0 !important;
-    box-shadow: none;
-}
+        /* ---------------------- */
+        /* change close button    */
 
-#nav-bar-customization-target {
-    padding: 0px;
-}
+        .close-icon {
+            list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/close%402x.png") !important;
+        }
 
-/* clear bottom border of nav-bar */
-#navigator-toolbox::after {
-    background: none;
-}
+        /* ---------------------- */
+        /* change new-tab button  */
 
-#urlbar {
-    background: var(--url-bg);
-    color: var(--url-text);
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 0;
-    box-shadow: none;
-}
-
-
-/* hide reload button and reader button */
-#urlbar-reload-button, #reader-mode-button {
-    display: none;
-}
-
-/* back and forward buttons */
-#back-button, #forward-button {
-    height: 22px !important;
-    width: 22px !important;
-    box-shadow: none !important;
-    border: none;
-}
-#back-button:not([disabled=true]), #forward-button:not([disabled=true]) {
-    background: var(--current-tab-bg) !important;
-    border: 1px solid rgba(0,0,0,0.2);
-}
-
-:-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu, #restore-button), #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-        list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/Toolbar%402x.png");
-}
-#back-button[disabled=true], #back-button[disabled=true]:hover {
-    border: 1px solid rgba(0,0,0,0.2);
-    background: var(--url-bg) !important;
-}
+        .tabs-newtab-button {
+            list-style: url("https://dl.dropboxusercontent.com/u/6253419/newtab%402x.png") !important;
+        }
 
 
 
+    /* ----------------------------------------------------------
+     *  navbar (back-button, url, favorite-button...)
+     */
+
+        /* ---------------------- */
+        /* navbar background-color and borders */
+
+        #nav-bar {
+            background: var(--url-bg) !important;
+            border: none !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+        }
+        #navigator-toolbox::after {
+            /* clear bottom border of nav-bar */
+            background: none;
+        }
+
+        /* ---------------------- */
+        /* navbar height          */
+
+        #nav-bar-customization-target {
+            padding: 0px;
+        }
+
+        /* ---------------------- */
+        /* url colors and borders */
+
+        #urlbar {
+            background: var(--url-bg);
+            color: var(--url-text);
+            border: 0px solid rgba(0,0,0,0.2);
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* ---------------------- */
+        /* back and forward buttons */
+
+        #back-button, #forward-button {
+            height: 22px !important;
+            width: 22px !important;
+            box-shadow: none !important;
+            border: none !important;
+            background: var(--url-bg) !important;
+        }
+        #back-button[disabled=true], #forward-button[disabled=true] {
+            opacity: 0.2 !important;
+        }
+
+        /* ---------------------- */
+        /* other navbar buttons   */
+
+        :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #social-share-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #e10s-button, #panic-button, #webide-button, #containers-panelmenu, #restore-button), #bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+                list-style-image: url("https://dl.dropboxusercontent.com/u/6253419/Toolbar%402x.png");
+        }
+    }
 
 
