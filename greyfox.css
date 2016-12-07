@@ -177,3 +177,12 @@
     }
 
 
+
+
+
+@-moz-document
+    url(about:blank) {
+        body {
+            background-color: #262626;
+        }
+}
