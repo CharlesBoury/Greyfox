@@ -114,6 +114,9 @@
         .tabbrowser-tab:not([selected="true"]) .tab-icon-image {
             filter: sepia(100%) opacity(50%) !important;
         }
+        .tabbrowser-tab:not([selected="true"]):hover .tab-icon-image {
+            filter: none !important;
+        }
 
         /* ---------------------- */
         /* change close button    */
