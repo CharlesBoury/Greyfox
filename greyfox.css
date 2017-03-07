@@ -21,6 +21,19 @@
     url(chrome://browser/content/browser.xul) {
 
     /* ----------------------------------------------------------
+     *  Menubar
+     */
+
+        /* ---------------------- */
+        /* remove menubar in chrome://browser/content/browser.xul */
+
+        #toolbar-menubar {
+            display: none !important;
+        }
+
+        
+        
+    /* ----------------------------------------------------------
      *  Tabs
      */
         /* ---------------------- */
