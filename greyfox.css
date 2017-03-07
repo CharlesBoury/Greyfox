@@ -220,17 +220,4 @@
         .ac-title-text[selected=true] {
             color: var(--tab-hover-text) !important;
         }
-
-        
-    }
-
-
-
-
-
-@-moz-document
-    url(about:blank) {
-        body {
-            background-color: #262626;
-        }
 }
