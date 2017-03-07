@@ -61,6 +61,20 @@
         }
 
         /* ---------------------- */
+        /* remove traffic-light buttons */
+        /*
+        #titlebar-buttonbox {
+             display: none !important;
+        }
+        .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+            padding: 0 !important;
+        }
+        #TabsToolbar {
+            margin-left: -7px;
+        }
+        */
+
+        /* ---------------------- */
         /* tabs background-color  */
 
         #TabsToolbar {
